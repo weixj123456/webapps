@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<item value="174" key="HistoryTableProvider.HistoryDialog.注释"/>
+	<item value="760" key="HistoryDialog.location.x"/>
+	<item value="144" key="HistoryDialog.location.y"/>
+	<item value="svn://192.168.2.108/WorkSpace-Oxygen-2/webapps" key="UrlCombo.webapps.1"/>
+	<item value="svn://192.168.2.108" key="UrlCombo.webapps.2"/>
+	<item value="70" key="HistoryTableProvider.HistoryDialog.作者"/>
+	<item value="svn://192.168.0.178/WorkSpace-Oxygen-2/webapps" key="UrlCombo.webapps.0"/>
+	<item value="svn://192.168.2.110/WorkSpace-Oxygen-2/webapps" key="UrlCombo.webapps.3"/>
+	<item value="193" key="SetSvnPropertyDialog.location.y"/>
+	<item value="606" key="SwitchDialogWithConflictHandling.size.x"/>
+	<item value="698" key="SetSvnPropertyDialog.location.x"/>
+	<item value="821" key="SwitchDialogWithConflictHandling.size.y"/>
+	<item value="88" key="HistoryTableProvider.HistoryDialog.日期"/>
+	<item value="579" key="HistoryDialog.weights.0"/>
+	<item value="226" key="CommitDialog.location.y"/>
+	<item value="367" key="CommitDialog.location.x"/>
+	<item value="200" key="HistoryDialog.weights.2"/>
+	<item value="35" key="HistoryTableProvider.HistoryDialog.修订"/>
+	<item value="70" key="HistoryDialog.weights.1"/>
+	<item value="500" key="CommitDialog.weights.0"/>
+	<item value="500" key="CommitDialog.weights.1"/>
+	<item value="525" key="SetSvnPropertyDialog.size.x"/>
+	<item value="491" key="SetSvnPropertyDialog.size.y"/>
+	<item value="441" key="CommitDialog.size.y"/>
+	<item value="1186" key="CommitDialog.size.x"/>
+	<item value="400" key="HistoryDialog.size.x"/>
+	<item value="0" key="SwitchDialogWithConflictHandling.location.y"/>
+	<item value="400" key="HistoryDialog.size.y"/>
+	<item value="657" key="SwitchDialogWithConflictHandling.location.x"/>
+	<section name="CommitWizard">
+		<item value="500" key="VWeight2"/>
+		<item value="500" key="VWeight1"/>
+		<item value="false" key="ShowCompare"/>
+	</section>
+</section>

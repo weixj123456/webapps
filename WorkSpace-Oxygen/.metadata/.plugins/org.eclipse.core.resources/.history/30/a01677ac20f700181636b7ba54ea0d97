@@ -1,0 +1,39 @@
+package cn.temptation.web;
+
+import java.io.File;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+public class FileUploadController {
+
+	@RequestMapping(value="/register")
+    public String register(HttpServletRequest request,
+            @ModelAttribute User1 user,
+            Model model) throws Exception {
+       System.out.println(user.getUsername());
+       //如果文件不为空，写入上传路径
+       if(!user.getImage().isEmpty()) {
+           //上传文件路径
+           String path = request.getServletContext().getRealPath("/images/");
+           //上传文件名
+           String filename = user.getImage().getOriginalFilename();
+           File filepath = new File(path,filename);
+           //判断路径是否存在，如果不存在就创建一个
+           if (!filepath.getParentFile().exists()) { 
+               filepath.getParentFile().mkdirs();
+           }
+           //将上传文件保存到一个目标文件当中
+           user.getImage().transferTo(new File(path + File.separator + filename));
+           //将用户添加到model
+           model.addAttribute("user", user);
+           return "userInfo";
+       } else {
+           return "error";
+       }
+   }
+
+}

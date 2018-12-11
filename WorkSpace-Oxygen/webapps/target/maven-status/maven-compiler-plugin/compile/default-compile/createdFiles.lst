@@ -1,0 +1,8 @@
+cn\temptation\domain\User1.class
+cn\temptation\web\FileUploadController.class
+cn\temptation\dao\UserDao.class
+cn\temptation\web\UserController.class
+cn\temptation\domain\User.class
+cn\temptation\domain\Apple.class
+cn\temptation\web\FileController.class
+cn\temptation\web\UploadServlet.class

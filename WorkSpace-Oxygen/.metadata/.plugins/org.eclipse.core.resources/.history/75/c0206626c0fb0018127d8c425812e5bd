@@ -1,0 +1,13 @@
+package cn.temptation.domain;
+
+public class Apple {
+    String name="苹果";
+    
+     String getName() {
+    	
+    	return name;
+    }
+	
+	
+	
+}

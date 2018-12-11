@@ -1,0 +1,23 @@
+package cn.temptation.domain;
+
+public class Apple {
+    static String name="9999999999999";
+        
+     public Apple() {
+		super();
+		// TODO Auto-generated constructor stub
+	}     
+     
+     
+	public void setName(String name) {
+		Apple.name = name;
+	}
+
+	String getName() {
+    	
+    	return name;
+    }
+	
+	
+	
+}
