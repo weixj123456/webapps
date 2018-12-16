@@ -169,6 +169,16 @@
 			  <version>1.2.13</version>
 		</dependency>
           --> 
+          
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>2.3.22</version>
+        </dependency>
+          
+          
+          
+          
         <!-- Spring相关包 -->
         <dependency>
             <groupId>org.springframework</groupId>
