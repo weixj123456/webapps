@@ -13,7 +13,11 @@ import org.springframework.web.multipart.MultipartFile;
 //域对象，实现序列化接口
 public class User1 implements Serializable{
 
-    private String username;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7795674030518174692L;
+	private String username;
     private MultipartFile image;
 
     public User1() {

@@ -77,7 +77,6 @@ public class UploadServlet extends HttpServlet {
  
         try {
             // 解析请求的内容提取文件数据
-            @SuppressWarnings("unchecked")
             List<FileItem> formItems = upload.parseRequest(request);
  
             if (formItems != null && formItems.size() > 0) {
