@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>登录</title>
 </head>
-<body>
+<body><!-- placeholder -->
 <form action="user/login" method="post">
 <label>账号：</label>
-<input type="text" id="txtUsername" name="username" placeholder="请输入账号" /><br/>
+<input type="text" id="txtUsername" name="username" value="请输入账号" /><br/>
 <label>密码：</label>
-<input type="password" id="txtPassword" name="password" placeholder="请输入密码" /><br/>
+<input type="password" id="txtPassword" name="password" value="请输入密码" /><br/>
 <input type="submit" value="提交" />
 <input type="reset" value="重置" />
 </form>
@@ -19,7 +19,8 @@
             <br>
              <br>
               <br>
-              &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp   &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp 
+          <!--     &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp 
+              &nbsp    &nbsp    &nbsp    &nbsp    &nbsp    &nbsp   &nbsp    &nbsp -->
            <%
                   out.println("--------------------------------Hello World！  V1.0版本-------------------------------");
  //             out.println(new Apple());

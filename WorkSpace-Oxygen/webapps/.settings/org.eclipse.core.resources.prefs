@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/java/org/com/tools/cards/Card16.java=ISO-8859-1
+encoding//src/main/resources=UTF-8
 encoding//src/main/resources/log4j.properties=UTF-8
 encoding//src/main/webapp/filehandler/fileupload.jsp=UTF-8
 encoding//src/test/java=UTF-8
+encoding/<project>=UTF-8
