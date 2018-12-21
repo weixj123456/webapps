@@ -47,18 +47,9 @@
 				        </resources>
 				-->
 	            
-	            
-	            	   
-	        <plugins>
+ <plugins>
           <!--    
-          <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
-                </configuration>
-            </plugin>           
+                    
            -->       
         <!--   -->     
         <plugin>
@@ -102,8 +93,63 @@
 							        <source>1.8</source>
 							        <target>1.8</target>
 							        <encoding>UTF-8</encoding>
+							        <compilerArguments>
+					                   <extdirs>src\main\webapp\WEB-INF\lib</extdirs>
+					                </compilerArguments>
 							     </configuration>
 							 </plugin> 
+							  
+							  
+							<!-- 用于拷贝maven依赖的plugin -->
+						        <plugin>
+						            <groupId>org.apache.maven.plugins</groupId>
+						            <artifactId>maven-dependency-plugin</artifactId>
+						            <version>2.10</version>
+						            <executions>
+						                <execution>
+						                    <id>copy-dependencies</id>
+						                    <phase>package</phase>
+						                    <goals>
+						                        <goal>copy-dependencies</goal>
+						                    </goals>
+						                    <configuration>
+						                    <!-- 把依赖的所有maven jar包拷贝到lib目录中（这样所有的jar包都在lib目录中） -->
+						                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
+						                    </configuration>
+						                </execution>
+						            </executions>
+						        </plugin>  
+								<!-- 用于拷贝resource的plugin -->
+						        <plugin>
+						            <groupId>org.apache.maven.plugins</groupId>
+						            <artifactId>maven-resources-plugin</artifactId>
+						            <version>2.7</version>
+						            <configuration>
+						                <encoding>UTF-8</encoding>
+						            </configuration>
+						        </plugin>
+						 
+						        <!-- 配置生成源代码jar的plugin -->
+						        <plugin>
+						            <artifactId>maven-source-plugin</artifactId>
+						            <version>2.4</version>
+						            <configuration>
+						                <attach>true</attach>
+						                <encoding>UTF-8</encoding>
+						                <!-- 配置源代码jar文件的存放路径，和其他jar文件一起放在lib目录 -->
+						                <outputDirectory>${project.build.directory}/lib</outputDirectory>
+						            </configuration>
+						            <executions>
+						                <execution>
+						                    <phase>compile</phase>
+						                    <goals>
+						                        <goal>jar</goal>
+						                    </goals>
+						                </execution>
+						            </executions>
+						        </plugin>					  
+							  
+							  
 							    
 						<plugin>
 			                <groupId>org.apache.maven.plugins</groupId>
@@ -163,7 +209,7 @@
             </plugin>       
                                                                    
  <!-- ===================================================================================== -->                  
-        </plugins>
+       </plugins>
     </build>
       
       
