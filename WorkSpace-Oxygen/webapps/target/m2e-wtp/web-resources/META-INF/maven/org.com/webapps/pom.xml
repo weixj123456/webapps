@@ -10,7 +10,6 @@
   <!--  ==================V1.0=========================== -->
   <build>
 	    <finalName>webapps</finalName>
-	    <!--                         -->
 		    <directory>${project.basedir}/target</directory>
 	 <!--   <directory>${project.basedir}/target</directory>   --> 
 	        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
@@ -28,8 +27,7 @@
 			                </includes>
 			                <filtering>false</filtering>
 			            </resource>	                
-	            </resources>
-	            
+	            </resources>            
 	            <!-- 
 					    <resources>
 				            <resource>
@@ -47,10 +45,7 @@
 				        </resources>
 				-->
 	            
- <plugins>
-          <!--    
-                    
-           -->       
+ <plugins>      
         <!--   -->     
         <plugin>
             <groupId>org.apache.tomcat.maven</groupId>
@@ -63,8 +58,8 @@
                 <path>/${project.artifactId}</path>
             </configuration>
         </plugin>          
-
- <!-- ===================================================================================== -->      
+ <!-- ===================================构建配置================================================== --> 
+ <!-- ===================================构建配置================================================== -->      
        <!-- 以下是新配置方案 -->         
 					       <plugin>
 							      <groupId>org.apache.maven.plugins</groupId>
@@ -113,8 +108,9 @@
 						                        <goal>copy-dependencies</goal>
 						                    </goals>
 						                    <configuration>
-						                    <!-- 把依赖的所有maven jar包拷贝到lib目录中（这样所有的jar包都在lib目录中） -->
-						                        <outputDirectory>${project.build.directory}/lib</outputDirectory>
+						                    <!-- 把依赖的所有maven jar包拷贝到lib目录中（这样所有的jar包都在lib目录中）    ${project.basedir}/webapps/src/main/webapp/WEB-INF/lib-->
+						                    <!-- <outputDirectory>${project.build.directory}/lib</outputDirectory> -->
+						                    <outputDirectory>${project.basedir}/webapps/src/main/webapp/WEB-INF/lib</outputDirectory>
 						                    </configuration>
 						                </execution>
 						            </executions>
@@ -159,46 +155,49 @@
 			                    <skipTests>true</skipTests>
 			                </configuration>
                         </plugin>
-  <!-- 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.9.1</version>
-                <executions>
-                    <execution>
-                        <id>attach-javadocs</id>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-  
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-gpg-plugin</artifactId>
-                <version>1.8</version>
-                <executions>
-                    <execution>
-                        <id>sign-artifacts</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>sign</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-              
-   -->   <!--         
+         <!--  
+	              <configuration>
+                  		// <configLocation>${basedir}/springside-findbugs.xml</configLocation> 
+                  		<threshold>High</threshold>
+                  		<effort>Default</effort>
+	                 	 <findbugsXmlOutput>true</findbugsXmlOutput>
+	                	//   findbugs xml输出路径       
+	                   <findbugsXmlOutputDirectory>target/site</findbugsXmlOutputDirectory>
+                 	</configuration>
+                 	//执行mvn compile findbugs:findbugs  注意，这里一定要先编译，因为findbugs是检查class文件
+                 	//最后执行mvn compile site
+                 	
+                 	//运行findbugs任务前请先运行“mvn package”编译工程
+	                 	mvn findbugs:help       查看findbugs插件的帮助  
+						mvn findbugs:check      检查代码是否通过findbugs检查，如果没有通过检查，检查会失败，但检查不会生成结果报表  
+						mvn findbugs:findbugs   检查代码是否通过findbugs检查，如果没有通过检查，检查不会失败，会生成结果报表保存在target/findbugsXml.xml文件中  
+						mvn findbugs:gui        检查代码并启动gui界面来查看结果
+                 	//可以添加findbugs检查规则文件来使用用户自己的规则
+                 	<configuration>  
+						  <excludeFilterFile>findbugs-exclude.xml</excludeFilterFile>  
+						  <includeFilterFile>findbugs-include.xml</includeFilterFile>  
+					</configuration> 
+           	</plugin>
+            -->       
               <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <version>3.0.1</version>
-                <configuration>
-                    <effort>Max</effort>
-                    <threshold>Low</threshold>
-                    <xmlOutput>true</xmlOutput>
-                </configuration>
+                	<configuration>
+		               <!-- <effort>Default</effort> -->
+		                    <effort>Max</effort>
+		               <!-- <threshold>High</threshold> -->
+		                    <threshold>Low</threshold>
+		                    <xmlOutput>true</xmlOutput>
+		                    
+		                    <findbugsXmlOutput>true</findbugsXmlOutput>
+		                    <findbugsXmlWithMessages>true</findbugsXmlWithMessages>                   
+		                    <failOnError>false</failOnError>
+		               <!-- <configLocation>${basedir}/springside-findbugs.xml</configLocation> -->
+		                   <!-- findbugs xml输出路径-->
+		                   <findbugsXmlOutputDirectory>target/site</findbugsXmlOutputDirectory>
+		              
+                	 </configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -206,28 +205,24 @@
                         </goals>
                     </execution>
                 </executions>
-            </plugin>       
-       -->                                                         
- <!-- ===================================================================================== -->                  
+            </plugin>                                                                                    
        </plugins>
     </build>
       
-      
-<!-- =========================================================== -->
-<!-- =========================================================== -->
-<!-- =========================================================== -->
+<!-- ========================profile配置=================================== -->
+<!-- ========================profile配置=================================== -->
   <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <!-- Spring版本号 -->
         <spring.version>4.2.4.RELEASE</spring.version>
-    </properties>
+   </properties>
     
-     <!--=================插件安装======================     -->  
-     <!--=================插件安装======================     -->  
-     <!--=================插件安装======================     -->  
-     <!--=================插件安装======================     -->  
+<!--=================插件安装======================     -->  
+<!--=================插件安装======================     -->  
+<!--=================插件安装======================     -->  
+<!--=================插件安装======================     -->  
     
     <dependencies>    
          <!-- 打包插件 -->           
@@ -435,7 +430,13 @@
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
+        
+	    <dependency>
+			  <groupId>taglibs</groupId>
+			  <artifactId>standard</artifactId>
+			  <version>1.1.2</version>
+	     </dependency>
+        
         <!-- 日志相关包 -->
         <dependency>
             <groupId>log4j</groupId>
@@ -455,21 +456,7 @@
           <artifactId>slf4j-log4j12</artifactId>
           <version>1.7.12</version>
         </dependency>
-   <!-- <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-core</artifactId>
-            <version>1.1.1</version>
-        </dependency>
-    
-    <dependency>
-        <groupId>ch.qos.logback</groupId>
-        <artifactId>logback-classic</artifactId>
-        <version>1.1.1</version>
-    </dependency>
-         
-        -->  
-         
-         
+        <!-- -->        
         <!-- 单元测试相关包 -->
         <dependency>
             <groupId>junit</groupId>

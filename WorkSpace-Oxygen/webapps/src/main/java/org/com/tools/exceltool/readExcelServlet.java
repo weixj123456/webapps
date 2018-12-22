@@ -40,7 +40,8 @@ import java.util.List;
 public class readExcelServlet //extends HttpServlet 
 {
    // protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        public void excelServlet() {
+        @SuppressWarnings("resource")
+		public void excelServlet() {
 //	    request.setCharacterEncoding("UTF-8");
 
         //excel文件路径
@@ -124,7 +125,8 @@ public class readExcelServlet //extends HttpServlet
           List<List<Object>> listArray = new ArrayList<List<Object>>();
           try {
         	  POIFSFileSystem  fs = new POIFSFileSystem(is);
-        	  Workbook   wb = new HSSFWorkbook(fs);
+        	  @SuppressWarnings({ "unused", "resource" })
+			Workbook   wb = new HSSFWorkbook(fs);
           } catch (IOException e) {
               e.printStackTrace();
           }

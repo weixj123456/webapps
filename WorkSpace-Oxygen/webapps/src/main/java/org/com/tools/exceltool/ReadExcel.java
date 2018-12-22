@@ -34,7 +34,8 @@ public class ReadExcel {
 
     private static List<Object[]> readXLS(String filePath, int sheetNum) throws IOException {
         FileInputStream inputStream = new FileInputStream(filePath);
-        HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
+        @SuppressWarnings("resource")
+		HSSFWorkbook workbook = new HSSFWorkbook(inputStream);
 
         List<Object[]> datas = new ArrayList<Object[]>();//用来存数据
 
@@ -92,7 +93,8 @@ public class ReadExcel {
 
     private static List<Object[]> readXLSX(String filePath, int sheetNum) throws IOException {
         FileInputStream inputStream = new FileInputStream(new File(filePath));
-        XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
+        @SuppressWarnings("resource")
+		XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
 
         List<Object[]> datas = new ArrayList<Object[]>();//定义一个list用来存数据
 

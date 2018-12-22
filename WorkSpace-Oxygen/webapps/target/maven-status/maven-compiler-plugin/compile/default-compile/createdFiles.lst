@@ -12,6 +12,8 @@ org\com\tools\cards\Card16.class
 cn\temptation\domain\Apple.class
 cn\temptation\web\FileController.class
 cn\temptation\web\UploadServlet.class
+org\com\tools\exceltool\ApnWriteTool.class
+org\com\tools\exceltool\readExcelServlet.class
 org\com\tools\dbtool\JdbcUtils$1.class
 org\com\tools\task\MyTask.class
 cn\temptation\web\FileUploadController.class
@@ -21,8 +23,12 @@ org\com\tools\task\PrintTime.class
 org\com\tools\dbtool\Db.class
 cn\temptation\web\UserController.class
 org\com\tools\common\CreateIdno.class
+org\com\tools\exceltool\MainEntrance.class
 cn\temptation\domain\User.class
+org\com\tools\exceltool\ApnModel.class
 org\com\tools\dbtool\DbfindID.class
+org\com\tools\exceltool\ApnExcelParseTool.class
+org\com\tools\exceltool\ReadExcel.class
 org\com\tools\cards\maintest.class
 org\com\tools\common\Arrarymethod.class
 org\com\tools\task\MyTimerTask.class
