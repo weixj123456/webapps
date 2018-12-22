@@ -10,7 +10,8 @@ public class MyTask {
 	//public static void main(String[] args) { 
 	public static void runMytask() {
         Runnable runnable = new Runnable() { 
-        	int i=0;
+        	@SuppressWarnings("unused")
+			int i=0;
             public void run() {  
                 // task to run goes here
             	i++;

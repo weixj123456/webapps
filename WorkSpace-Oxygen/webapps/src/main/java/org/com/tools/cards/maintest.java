@@ -9,8 +9,10 @@ public class maintest {
 				String str1="622848003105670421";
 
 				if(str.length()==15 && str1.length()==18) {
-				new Card16().card016(str);
-				new Card19().card019(str1);
+				new Card16();
+				Card16.card016(str);
+				new Card19();
+				Card19.card019(str1);
 				}else if (str.length()>15) {
 					System.out.println("str���뿨�ų��������������룬��ǰ���ȣ�"+(str.length()+1));
 				}else if(str.length()<15) {

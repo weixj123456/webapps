@@ -1,13 +1,9 @@
 package org.com.tools.dbtool;
 
 import java.sql.SQLException;
-import java.util.List;
-
 import org.apache.commons.dbutils.QueryRunner;
 
-import cn.hutool.db.handler.BeanHandler;
-import cn.hutool.db.handler.BeanListHandler;
-import cn.temptation.domain.User;
+
 
 
 public class Db {
@@ -37,17 +33,17 @@ public class Db {
 	    }
 	    
 	    public static void find(String tablename,String whereid) throws SQLException {
-	        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
-	        String sql = "select * from "+tablename+ " where "+whereid+"=?";
-	        Object params[] = {2};
+//	        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+//	        String sql = "select * from "+tablename+ " where "+whereid+"=?";
+//	        Object params[] = {2};
 //	        User user = (User) qr.query(sql, params, new BeanHandler(User.class));
 	//       System.out.println(user.getId());
 	    }
 
 	    
 	    public static void getAll() throws SQLException {
-	        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
-	        String sql = "select * from users";
+//	        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+//	        String sql = "select * from users";
 //	        List<User> list = (List<User>) qr.query(sql, new BeanListHandler(User.class));
 //	        for(User u : list){
 //	             System.out.print(u.getUserid()+"   ");

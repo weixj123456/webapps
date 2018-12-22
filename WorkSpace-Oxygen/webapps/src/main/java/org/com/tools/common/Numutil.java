@@ -2,10 +2,10 @@ package org.com.tools.common;
 
 public class Numutil {
 	static String code;
-	static int num;
+	 static int num;
 	public Numutil(String code, int num) {
-		this.code=code;
-		this.num=num;
+		Numutil.code=code;
+		Numutil.num=num;
 	}
 	/**
      * 不够位数的在前面补0，保留num的长度位数字

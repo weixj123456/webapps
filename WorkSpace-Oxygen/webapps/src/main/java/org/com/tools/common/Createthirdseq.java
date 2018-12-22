@@ -16,15 +16,17 @@ public class Createthirdseq {
   		 String time=formatter.format(date);  
   		// System.out.println(time);
   	     num++;
-  	     Numutil num1=new Numutil(""+num,3);
-  	     String str=num1.autoGenericCode();
+  	     @SuppressWarnings("unused")
+		Numutil num1=new Numutil(""+num,3);
+  	     String str=Numutil.autoGenericCode();
   	     String thirdseq="PPD"+time+str;
   	     System.out.println(thirdseq);
   	     }
   	     return thirdseq;     
       }
       public static void main(String[] args) {
-		String thirdseq=new Createthirdseq().createnum(5);
+		new Createthirdseq();
+		String thirdseq=Createthirdseq.createnum(5);
 		System.out.println(thirdseq);
 	}
 }

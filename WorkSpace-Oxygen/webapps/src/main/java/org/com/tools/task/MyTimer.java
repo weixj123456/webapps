@@ -12,8 +12,9 @@ public class MyTimer {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		System.out.println(sf.format(calendar.getTime()));
 		calendar.add(Calendar.SECOND, 3);
-		myTimerTask.setName("scheduleAtFixedRate");
-		
+//		myTimerTask.setName("scheduleAtFixedRate");
+		MyTimerTask.setName("scheduleAtFixedRate");
+
 		// timer.scheduleAtFixedRate(myTimerTask, calendar.getTime(), 2000);
 		
 		timer.scheduleAtFixedRate(myTimerTask, 3000, 2000);
