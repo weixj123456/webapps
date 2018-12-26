@@ -14,11 +14,11 @@
 	 <!--   <directory>${project.basedir}/target</directory>   --> 
 	        <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
 	        <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
-	        <resources> 
+	     <!--    <resources> 
 	              <resource>  
 	                <directory>${project.basedir}/src/main/resources</directory>
 	              </resource>
-	   <!-- 如果不添加此节点mybatis的mapper.xml文件都会被漏掉。 -->      	            
+	                                        如果不添加此节点mybatis的mapper.xml文件都会被漏掉。       	            
 			            <resource>
 			                <directory>src/main/java</directory>
 			                <includes>
@@ -27,8 +27,8 @@
 			                </includes>
 			                <filtering>false</filtering>
 			            </resource>	                
-	            </resources>            
-	            <!-- 
+	            </resources>    -->        
+	            <!-- -->
 					    <resources>
 				            <resource>
 				                <directory>src/main/java</directory>
@@ -43,7 +43,7 @@
 				                </includes>
 				            </resource>
 				        </resources>
-				-->
+				
 	            
  <plugins>      
         <!--   -->     
