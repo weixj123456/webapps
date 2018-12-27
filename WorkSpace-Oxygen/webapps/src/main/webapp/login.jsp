@@ -9,9 +9,9 @@
 <body><!-- placeholder -->
 <form action="user/login" method="post">
 <label>账号：</label>
-<input type="text" id="txtUsername" name="username" value="请输入账号" /><br/>
+<input type="text" id="txtUsername" name="username" value="" /><br/>
 <label>密码：</label>
-<input type="password" id="txtPassword" name="password" value="请输入密码" /><br/>
+<input type="password" id="txtPassword" name="password" value="" /><br/>
 <input type="submit" value="提交" />
 <input type="reset" value="重置" />
 </form>
