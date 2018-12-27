@@ -13,6 +13,14 @@
     <!-- 注册MVC注解驱动 -->
     <mvc:annotation-driven />
 
+      <!-- 扫描Controller -->
+  <!--  <context:component-scan base-package="org.cj.controller">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+      </context:component-scan>
+-->
+
+
     <!-- 静态资源可访问的设置方式 -->
     <mvc:default-servlet-handler />
 
