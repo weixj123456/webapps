@@ -254,9 +254,30 @@
 			  <version>1.9.13</version>
 		</dependency>
          
+         <dependency>
+			  <groupId>xstream</groupId>
+			  <artifactId>xstream</artifactId>
+			  <version>1.2.2</version>
+		</dependency>
          
          
-		<!-- json jar包 -->
+         <dependency>
+			  <groupId>org.kie.modules</groupId>
+			  <artifactId>nu-xom-main</artifactId>
+			  <version>6.5.0.Final</version>
+			  <type>pom</type>
+		</dependency>
+         
+         
+<!--  
+         
+         <dependency>
+			  <groupId>xom</groupId>
+			  <artifactId>xom</artifactId>
+			  <version>1.2.5</version>
+		 </dependency>
+     -->    
+		<!-- json jar包   -->
 		<dependency>
 		  <groupId>com.hynnet</groupId>
 		  <artifactId>json-lib</artifactId>
