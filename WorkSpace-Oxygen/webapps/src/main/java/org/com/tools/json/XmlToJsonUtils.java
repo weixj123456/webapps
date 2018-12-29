@@ -18,7 +18,8 @@ public class XmlToJsonUtils {
     public static void main(String[] args) throws Exception {
         // String xmlStr= readFile("D:/ADA/et/Issue_20130506_back.xml");
  
-        String xmlStr = "<auth_response status=\"OK\" xmlns=\"http://www.fnac.com/schemas/mp-dialog.xsd\">"
+        @SuppressWarnings("unused")
+		String xmlStr = "<auth_response status=\"OK\" xmlns=\"http://www.fnac.com/schemas/mp-dialog.xsd\">"
                 + "<token>00E9822E-E926-C274-53BF-A2784195A3CE</token>"
                 + "<validity>2018-03-23T10:45:21+01:00</validity>" + "<version>2.6.0</version>" + "</auth_response>";
         String xml = "<?xml version=\"1.0\" encoding=\"utf-8\"?>" + "<batch_status_response status=\"OK\">"

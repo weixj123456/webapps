@@ -268,7 +268,11 @@
 			  <type>pom</type>
 		</dependency>
          
-         
+         <dependency>
+			  <groupId>org.jdom</groupId>
+			  <artifactId>jdom</artifactId>
+			  <version>2.0.2</version>
+		</dependency>
 <!--  
          
          <dependency>
@@ -283,14 +287,7 @@
 		  <artifactId>json-lib</artifactId>
 		  <version>2.4</version>
 		</dependency>  
-		<!-- 引入json-lib的依赖   
-		<dependency>
-		  <groupId>net.sf.json-lib</groupId>
-		  <artifactId>json-lib</artifactId>
-		  <version>2.4</version>
-		</dependency>
-         -->
-                
+		<!-- 引入json-lib的依赖   -->              
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
