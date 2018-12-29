@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+	<head>
+		<currentBusinessCode>CF001016</currentBusinessCode>
+		<flowNo>201804170000229913</flowNo>
+		<reqTime>20161109105548</reqTime>
+		<channel>7102</channel>
+	</head>
+	<reqdata>
+		<thirdSeq>weitf20180621033</thirdSeq>
+		<docCde>DTY0004</docCde>
+		<docName>1529487247237.pdf</docName>
+	</reqdata>
+</root>

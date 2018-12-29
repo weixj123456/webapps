@@ -54,6 +54,27 @@ public class XmlUtil {
     }
     return obj;
   }
+  
+  /**
+   * 
+   * 
+   <?xml version="1.0" encoding="utf-8" ?>
+  <MoBaoAccount MessageType="UserMobilePay" PlatformID="b2ctest">
+  <OrderNo>M20150521084825</OrderNo>
+  <TradeAmt>5000.00</TradeAmt>
+  <Commission>0.5</Commission>
+  <UserID>xiaolong</UserID>
+  <MerchID>xiaolong1</MerchID>
+  <tradeType>0</tradeType>
+  <CustParam>123</CustParam>
+  <NotifyUrl>http://mobaopay.com/callback.do</NotifyUrl>
+  <TradeSummary>订单</TradeSummary>
+  </MoBaoAccount>
+
+   * @param args
+   * @throws JDOMException
+   * @throws IOException
+   */
   public static void main(String[] args) throws JDOMException, IOException {
     String xml="<?xml version=\"1.0\" encoding=\"utf-8\" ?><MoBaoAccount MessageType=\"UserMobilePay\" PlatformID=\"b2ctest\"><OrderNo>M20150521084825</OrderNo><TradeAmt>5000.00</TradeAmt><Commission>0.5</Commission><UserID>zhuxiaolong</UserID><MerchID>zhuxiaolong1</MerchID><tradeType>0</tradeType><CustParam>123</CustParam> <NotifyUrl>http://mobaopay.com/callback.do</NotifyUrl><TradeSummary>订单</TradeSummary></MoBaoAccount>";
     JSONObject json=xml2JSON(xml.getBytes());
