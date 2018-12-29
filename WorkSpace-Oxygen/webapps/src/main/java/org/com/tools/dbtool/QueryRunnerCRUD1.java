@@ -1,20 +1,16 @@
 package org.com.tools.dbtool;
 
 import java.sql.SQLException;
-import java.util.List;
+
 
 
 import org.apache.commons.dbutils.QueryRunner;
-import org.apache.commons.dbutils.handlers.BeanHandler;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
-
-
-import com.cy.ssm.beans.Countno;
-import com.cy.ssm.beans.Idcard;
 
 
 
-public class QueryRunnerCRUD {
+
+
+public class QueryRunnerCRUD1 {
     /*
      *测试表
     CREATE TABLE `users` (
@@ -55,54 +51,35 @@ String sql = "INSERT INTO `cmis`.`users` (`id`,`account`, `user_id`) VALUES (?,?
         Object params[] = { updatenum, id};
         qr.update(sql, params); 
     }
-    
-public static void updateCountnotable(int updatenum) throws SQLException {
-    	
-        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
-        //更新模板
-      //  String sql = "update users set account=? where id=?";
-        String sql = "update countno set num=? where id=1";
-        Object params[] = {updatenum};
-        qr.update(sql, params); 
-    }
 
-    @SuppressWarnings("deprecation")
+
 	public  static String findIdno(int idnum) throws SQLException {
-        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
-        String sql = "select * from idcard where id=?";
-        Object params[] = {idnum};
+//        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+//        String sql = "select * from idcard where id=?";
+//        Object params[] = {idnum};
         String idno=null;
         //User user = (User) qr.query(sql, params, new BeanHandler(User.class));       
-		Idcard idcard=(Idcard) qr.query(sql, params, new BeanHandler<Object>(Idcard.class));
-        idno=idcard.getIdno();
+//		Idcard idcard=(Idcard) qr.query(sql, params, new BeanHandler<Object>(Idcard.class));
+//        idno=idcard.getIdno();
         //System.out.println(idcard.getIdno());
         //qr.update(sql, params);
         return idno;
     }
     
-    @SuppressWarnings("deprecation")
-	//public  static int findCountnum(int id) throws SQLException {
-//        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
-//        String sql = "select num from countno where id=?";
-//        Object params[] = {id};
-//        int idno=null;
-//        //User user = (User) qr.query(sql, params, new BeanHandler(User.class));       
-//		Countno countno=(Countno) qr.query(sql, params, new BeanHandler<Object>(Idcard.class));
-//        idno=Countno.getId();
-//        //System.out.println(idcard.getIdno());
-//        //qr.update(sql, params);
-//        return idno;
-    //}
+    public static void getAll2(String tablename,Object Idcard) throws SQLException {
+        
+         
+    }
 
         public  static int getAll(int num1) throws SQLException {
-    	QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
+//    	QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
     	//Idcard u = new Idcard();
-    	int keynum=0;
-         String idno=null;
+ //   	int keynum=0;
+//         String idno=null;
          int num=0;
-    	String sql = "select * from idcard";       
-        List<Idcard> list = (List<Idcard>) qr.query(sql, new BeanListHandler(Idcard.class));
-        for(Idcard u : list){
+ //   	String sql = "select * from idcard";       
+//        List<Idcard> list = (List<Idcard>) qr.query(sql, new BeanListHandler(Idcard.class));
+ /**       for(Idcard u : list){
 //             System.out.print(u.getId()+"  ");
 //             System.out.print(u.getIdno()+"  ");
 //             System.out.println(u.getNum()+"  ");
@@ -123,7 +100,7 @@ public static void updateCountnotable(int updatenum) throws SQLException {
         		System.out.println();
         		//break;
         	}      	
-        } 
+        }  */
       return num;
     }
      

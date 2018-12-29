@@ -3,7 +3,12 @@ package org.com.tools.common;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.log4j.Logger;
+
 public class Createflowno {
+	
+	Logger	log	= Logger.getLogger(Createflowno.class);
+	   
       public static String createnum() {
     	 Date date=new Date();  
  		 SimpleDateFormat formatter=new SimpleDateFormat("yyyyMMdd");  

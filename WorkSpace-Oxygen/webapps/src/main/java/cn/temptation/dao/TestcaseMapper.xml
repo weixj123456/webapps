@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.temptation.dao.TestcaseMapper">
+  <resultMap id="BaseResultMap" type="cn.temptation.domain.Testcase">
+    <id column="ID" jdbcType="VARCHAR" property="id" />
+    <result column="FolderID" jdbcType="VARCHAR" property="folderid" />
+    <result column="Code" jdbcType="VARCHAR" property="code" />
+    <result column="Name" jdbcType="VARCHAR" property="name" />
+    <result column="Description" jdbcType="VARCHAR" property="description" />
+    <result column="Priority" jdbcType="VARCHAR" property="priority" />
+    <result column="IsContinue" jdbcType="BIT" property="iscontinue" />
+    <result column="UpdateUser" jdbcType="VARCHAR" property="updateuser" />
+    <result column="UpdateUserName" jdbcType="VARCHAR" property="updateusername" />
+    <result column="CreateDate" jdbcType="TIMESTAMP" property="createdate" />
+    <result column="UpdateDate" jdbcType="TIMESTAMP" property="updatedate" />
+    <result column="PlatformType" jdbcType="SMALLINT" property="platformtype" />
+    <result column="ConditionID" jdbcType="VARCHAR" property="conditionid" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="cn.temptation.domain.Testcase">
+    <result column="NameFormatConfig" jdbcType="LONGVARCHAR" property="nameformatconfig" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    ID, FolderID, Code, Name, Description, Priority, IsContinue, UpdateUser, UpdateUserName, 
+    CreateDate, UpdateDate, PlatformType, ConditionID
+  </sql>
+  <sql id="Blob_Column_List">
+    NameFormatConfig
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from testcase
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from testcase
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="cn.temptation.domain.Testcase">
+    insert into testcase (ID, FolderID, Code, 
+      Name, Description, Priority, 
+      IsContinue, UpdateUser, UpdateUserName, 
+      CreateDate, UpdateDate, PlatformType, 
+      ConditionID, NameFormatConfig)
+    values (#{id,jdbcType=VARCHAR}, #{folderid,jdbcType=VARCHAR}, #{code,jdbcType=VARCHAR}, 
+      #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, #{priority,jdbcType=VARCHAR}, 
+      #{iscontinue,jdbcType=BIT}, #{updateuser,jdbcType=VARCHAR}, #{updateusername,jdbcType=VARCHAR}, 
+      #{createdate,jdbcType=TIMESTAMP}, #{updatedate,jdbcType=TIMESTAMP}, #{platformtype,jdbcType=SMALLINT}, 
+      #{conditionid,jdbcType=VARCHAR}, #{nameformatconfig,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.temptation.domain.Testcase">
+    insert into testcase
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        ID,
+      </if>
+      <if test="folderid != null">
+        FolderID,
+      </if>
+      <if test="code != null">
+        Code,
+      </if>
+      <if test="name != null">
+        Name,
+      </if>
+      <if test="description != null">
+        Description,
+      </if>
+      <if test="priority != null">
+        Priority,
+      </if>
+      <if test="iscontinue != null">
+        IsContinue,
+      </if>
+      <if test="updateuser != null">
+        UpdateUser,
+      </if>
+      <if test="updateusername != null">
+        UpdateUserName,
+      </if>
+      <if test="createdate != null">
+        CreateDate,
+      </if>
+      <if test="updatedate != null">
+        UpdateDate,
+      </if>
+      <if test="platformtype != null">
+        PlatformType,
+      </if>
+      <if test="conditionid != null">
+        ConditionID,
+      </if>
+      <if test="nameformatconfig != null">
+        NameFormatConfig,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="folderid != null">
+        #{folderid,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null">
+        #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="iscontinue != null">
+        #{iscontinue,jdbcType=BIT},
+      </if>
+      <if test="updateuser != null">
+        #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateusername != null">
+        #{updateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedate != null">
+        #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="platformtype != null">
+        #{platformtype,jdbcType=SMALLINT},
+      </if>
+      <if test="conditionid != null">
+        #{conditionid,jdbcType=VARCHAR},
+      </if>
+      <if test="nameformatconfig != null">
+        #{nameformatconfig,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.temptation.domain.Testcase">
+    update testcase
+    <set>
+      <if test="folderid != null">
+        FolderID = #{folderid,jdbcType=VARCHAR},
+      </if>
+      <if test="code != null">
+        Code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        Name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        Description = #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="priority != null">
+        Priority = #{priority,jdbcType=VARCHAR},
+      </if>
+      <if test="iscontinue != null">
+        IsContinue = #{iscontinue,jdbcType=BIT},
+      </if>
+      <if test="updateuser != null">
+        UpdateUser = #{updateuser,jdbcType=VARCHAR},
+      </if>
+      <if test="updateusername != null">
+        UpdateUserName = #{updateusername,jdbcType=VARCHAR},
+      </if>
+      <if test="createdate != null">
+        CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatedate != null">
+        UpdateDate = #{updatedate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="platformtype != null">
+        PlatformType = #{platformtype,jdbcType=SMALLINT},
+      </if>
+      <if test="conditionid != null">
+        ConditionID = #{conditionid,jdbcType=VARCHAR},
+      </if>
+      <if test="nameformatconfig != null">
+        NameFormatConfig = #{nameformatconfig,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="cn.temptation.domain.Testcase">
+    update testcase
+    set FolderID = #{folderid,jdbcType=VARCHAR},
+      Code = #{code,jdbcType=VARCHAR},
+      Name = #{name,jdbcType=VARCHAR},
+      Description = #{description,jdbcType=VARCHAR},
+      Priority = #{priority,jdbcType=VARCHAR},
+      IsContinue = #{iscontinue,jdbcType=BIT},
+      UpdateUser = #{updateuser,jdbcType=VARCHAR},
+      UpdateUserName = #{updateusername,jdbcType=VARCHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      UpdateDate = #{updatedate,jdbcType=TIMESTAMP},
+      PlatformType = #{platformtype,jdbcType=SMALLINT},
+      ConditionID = #{conditionid,jdbcType=VARCHAR},
+      NameFormatConfig = #{nameformatconfig,jdbcType=LONGVARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.temptation.domain.Testcase">
+    update testcase
+    set FolderID = #{folderid,jdbcType=VARCHAR},
+      Code = #{code,jdbcType=VARCHAR},
+      Name = #{name,jdbcType=VARCHAR},
+      Description = #{description,jdbcType=VARCHAR},
+      Priority = #{priority,jdbcType=VARCHAR},
+      IsContinue = #{iscontinue,jdbcType=BIT},
+      UpdateUser = #{updateuser,jdbcType=VARCHAR},
+      UpdateUserName = #{updateusername,jdbcType=VARCHAR},
+      CreateDate = #{createdate,jdbcType=TIMESTAMP},
+      UpdateDate = #{updatedate,jdbcType=TIMESTAMP},
+      PlatformType = #{platformtype,jdbcType=SMALLINT},
+      ConditionID = #{conditionid,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
