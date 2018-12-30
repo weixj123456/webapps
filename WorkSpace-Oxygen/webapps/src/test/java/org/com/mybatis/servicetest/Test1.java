@@ -19,7 +19,7 @@ import cn.temptation.domain.Channel;
 
 
 public class Test1 {
-	Logger	log	= Logger.getLogger(MyTask.class);
+	Logger	log	= Logger.getLogger(Test1.class);
    @Test
     public void findChannelByID() throws Exception{
         String resource = "SqlMapConfig.xml";
