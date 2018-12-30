@@ -14,11 +14,15 @@ import java.util.logging.Logger;
 import javax.sql.DataSource;
 
 import org.apache.ibatis.executor.resultset.ResultSetHandler;
+//import org.apache.log4j.Logger;
 
 
 
 public class JdbcUtils {
-
+     
+//	Logger	log	= Logger.getLogger(JdbcUtils.class);
+	
+	
     private static String driver = "com.mysql.jdbc.Driver";
     private static String url = "jdbc:mysql://localhost:3306/cmis";
     private static String username = "root";

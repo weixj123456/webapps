@@ -52,7 +52,7 @@
       #{cooperationtype,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, #{isdelete,jdbcType=BIT}
       )
   </insert>
-  <insert id="insertSelective" parameterType="cn.temptation.domain.Channel">
+  <insert id="insertChannel" parameterType="cn.temptation.domain.Channel">
     insert into channel
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="id != null">

@@ -255,7 +255,8 @@ public class HttpClientUtils
      * @param params 请求参数Map
      * @return 响应数据或null
      */
-    public static Map<String, Object> doPost(String url, Map<String, Object> params){
+    @SuppressWarnings("unchecked")
+	public static Map<String, Object> doPost(String url, Map<String, Object> params){
         CloseableHttpClient httpClient = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
         RequestConfig requestConfig = RequestConfig.custom()

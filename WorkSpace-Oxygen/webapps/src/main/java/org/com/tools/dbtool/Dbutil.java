@@ -7,7 +7,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 public class Dbutil {
+	
+	
+	Logger	log	= Logger.getLogger(Dbutil.class);
+	
 	public Object insertGetId(String sql, Object... params) throws Exception {  
         Connection conn = null;  
         PreparedStatement prepare = null;  

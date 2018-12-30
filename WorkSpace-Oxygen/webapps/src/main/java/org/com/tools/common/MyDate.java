@@ -5,9 +5,10 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.lang3.time.DateFormatUtils;
+import org.apache.log4j.Logger;
 
 public class MyDate {
-
+	Logger	log	= Logger.getLogger(MyDate.class);
 //	public void f1() {
 //		  //将long字符串转换成格式时间输出 		  
 //		   String time="1256006105375";  	  

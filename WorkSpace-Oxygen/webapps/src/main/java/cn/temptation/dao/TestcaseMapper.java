@@ -3,6 +3,9 @@ package cn.temptation.dao;
 import cn.temptation.domain.Testcase;
 
 public interface TestcaseMapper {
+	
+	
+	
     int deleteByPrimaryKey(String id);
 
     int insert(Testcase record);

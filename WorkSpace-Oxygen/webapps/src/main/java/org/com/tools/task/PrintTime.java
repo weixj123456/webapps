@@ -2,9 +2,13 @@ package org.com.tools.task;
 
 import java.text.*;
 import java.util.*;
+
+import org.apache.log4j.Logger;
  
 //class Example {
 public class PrintTime {
+	
+	Logger	log	= Logger.getLogger(PrintTime.class);
     //public static void main(String args[]) {
 	public static void printCurrentTime() {
         TimeZone.setDefault(TimeZone.getTimeZone("Asia/Shanghai"));//定义时区，可以避免虚拟机时间与系统时间不一致的问题

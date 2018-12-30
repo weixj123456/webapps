@@ -5,9 +5,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+
+import org.apache.log4j.Logger;
 import org.junit.Test;
  
 public class ThreadDemo {
+	
+	Logger	log	= Logger.getLogger(ThreadDemo.class);
+	
     // 使用线程池,长度为2
     private final static ExecutorService pool = Executors.newFixedThreadPool(2);
     final long waitTime = 1 * 1000;

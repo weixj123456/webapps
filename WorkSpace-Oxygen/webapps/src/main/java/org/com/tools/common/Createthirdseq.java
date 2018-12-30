@@ -3,8 +3,10 @@ package org.com.tools.common;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import org.apache.log4j.Logger;
+
 public class Createthirdseq {
-	
+	Logger	log	= Logger.getLogger(Createthirdseq.class);
 	  static String thirdseq=null;
       public static String createnum(int num){
     	  //int num=0;

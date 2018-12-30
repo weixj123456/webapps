@@ -4,9 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.ModelAndView;
 
-import cn.temptation.dao.ChannelMapper;
 import cn.temptation.domain.Channel;
-import cn.temptation.domain.User;
 
 public class ChannelTest {
 	public ModelAndView login(Channel model, HttpSession session) {

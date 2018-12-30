@@ -2,7 +2,12 @@ package org.com.tools.dbtool;
 
 import java.sql.*;
 
+import org.apache.log4j.Logger;
+
 public class Dbtool{
+	
+	Logger	log	= Logger.getLogger(Dbtool.class);
+	
 	private static Connection conn = null;
 	 public Dbtool(){
 		 

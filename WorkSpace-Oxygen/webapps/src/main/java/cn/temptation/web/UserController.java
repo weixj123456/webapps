@@ -3,6 +3,7 @@ package cn.temptation.web;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
+import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,8 @@ import cn.temptation.domain.User;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
+	@SuppressWarnings("unused")
+	private static final Logger log = Logger.getLogger(UserController.class);
     @Resource
     private UserDao userDao;
 

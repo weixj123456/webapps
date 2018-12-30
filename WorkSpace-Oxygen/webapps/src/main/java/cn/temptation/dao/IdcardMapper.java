@@ -3,6 +3,9 @@ package cn.temptation.dao;
 import cn.temptation.domain.Idcard;
 
 public interface IdcardMapper {
+	
+//	Logger	log	= Logger.getLogger(Idcard.class);
+	
     int deleteByPrimaryKey(Integer id);
 
     int insert(Idcard record);

@@ -6,8 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import org.apache.log4j.Logger;
+
 
 public class DbfindID {	
+	
+	Logger	log	= Logger.getLogger(DbfindID.class);
+	
 		//@Test
 public static void queryMaxid(String tablename) throws SQLException{
 	        String tablename1=tablename;

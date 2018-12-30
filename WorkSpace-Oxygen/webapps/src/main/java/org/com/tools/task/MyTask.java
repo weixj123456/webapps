@@ -4,9 +4,14 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
+
 
 
 public class MyTask {
+	
+	Logger	log	= Logger.getLogger(MyTask.class);
+
 	//public static void main(String[] args) { 
 	public static void runMytask() {
         Runnable runnable = new Runnable() { 

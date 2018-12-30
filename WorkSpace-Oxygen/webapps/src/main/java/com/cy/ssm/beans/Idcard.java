@@ -1,6 +1,11 @@
 package com.cy.ssm.beans;
 
+import org.apache.log4j.Logger;
+
 public class Idcard {
+	
+//	private static final Logger log = Logger.getLogger(Idcard.class);
+	Logger	log	= Logger.getLogger(Idcard.class);
     private int id;
 
     private String idno;

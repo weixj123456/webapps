@@ -5,6 +5,9 @@ import java.util.List;
 import cn.temptation.domain.User;
 
 public interface UserDao {
+	
+//	Logger	log	= Logger.getLogger(UserDao.class);
+	
     public abstract User findByUsername(String username);
     
     public User findUserById(int id) throws Exception ;

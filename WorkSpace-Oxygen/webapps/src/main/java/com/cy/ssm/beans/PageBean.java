@@ -1,9 +1,16 @@
 package com.cy.ssm.beans;
 
 import java.util.List;
+
+import org.apache.log4j.Logger;
  
+@SuppressWarnings("hiding")
 public class PageBean<Object>
-{
+{   
+	@SuppressWarnings("unused")
+	private static final Logger log = Logger.getLogger(PageBean.class);
+
+	
     private int pc;//当前页码page code
     //private int tp;//总页数total pages
 

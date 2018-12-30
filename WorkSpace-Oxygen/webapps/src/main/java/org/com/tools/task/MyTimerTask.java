@@ -3,9 +3,13 @@ package org.com.tools.task;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimerTask;
+
+import org.apache.log4j.Logger;
  
 public class MyTimerTask extends TimerTask {
- 
+    
+	Logger	log	= Logger.getLogger(MyTimerTask.class);
+	
 	private static String name;
  
 	public MyTimerTask(String inputName) {

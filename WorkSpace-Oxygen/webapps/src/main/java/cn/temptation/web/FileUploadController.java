@@ -5,6 +5,7 @@ import java.io.File;
 import javax.servlet.http.HttpServletRequest;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.log4j.Logger;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,6 +27,8 @@ import cn.temptation.domain.User1;
  */
 @Controller
 public class FileUploadController {
+	@SuppressWarnings("unused")
+	private static final Logger log = Logger.getLogger(FileUploadController.class);
     @RequestMapping(value="/{formName}")
      public String loginForm(@PathVariable String formName) {
         // 动态跳转页面

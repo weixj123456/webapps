@@ -9,7 +9,6 @@ import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 
-import com.cy.ssm.beans.Countno;
 import com.cy.ssm.beans.Idcard;
 
 
@@ -80,7 +79,7 @@ public static void updateCountnotable(int updatenum) throws SQLException {
         return idno;
     }
     
-    @SuppressWarnings("deprecation")
+    @SuppressWarnings({ "rawtypes", "unchecked" })
 	//public  static int findCountnum(int id) throws SQLException {
 //        QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
 //        String sql = "select num from countno where id=?";
@@ -98,7 +97,8 @@ public static void updateCountnotable(int updatenum) throws SQLException {
     	QueryRunner qr = new QueryRunner(JdbcUtils.getDataSource());
     	//Idcard u = new Idcard();
     	int keynum=0;
-         String idno=null;
+         @SuppressWarnings("unused")
+		String idno=null;
          int num=0;
     	String sql = "select * from idcard";       
         List<Idcard> list = (List<Idcard>) qr.query(sql, new BeanListHandler(Idcard.class));

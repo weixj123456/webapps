@@ -15,6 +15,7 @@ import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 //import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.log4j.Logger;
  
 
 /**
@@ -22,6 +23,8 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
  */
 @WebServlet("/UploadServlet")
 public class UploadServlet extends HttpServlet {
+	@SuppressWarnings("unused")
+	private static final Logger log = Logger.getLogger(UploadServlet.class);
     private static final long serialVersionUID = 1L;
      
     // 上传文件存储目录
