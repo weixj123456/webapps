@@ -1,7 +1,5 @@
 package cn.temptation.domain;
 
-import java.util.Date;
-
 public class Channel {
     private Integer id;
 
@@ -27,9 +25,11 @@ public class Channel {
 
     private String baowenlujing;
 
+    private String docname;
+
     private Boolean isenable;
 
-    private Date lasttimestamp;
+    private String lasttimestamp;
 
     private String cooperationtype;
 
@@ -133,6 +133,14 @@ public class Channel {
         this.baowenlujing = baowenlujing == null ? null : baowenlujing.trim();
     }
 
+    public String getDocname() {
+        return docname;
+    }
+
+    public void setDocname(String docname) {
+        this.docname = docname == null ? null : docname.trim();
+    }
+
     public Boolean getIsenable() {
         return isenable;
     }
@@ -141,12 +149,12 @@ public class Channel {
         this.isenable = isenable;
     }
 
-    public Date getLasttimestamp() {
+    public String getLasttimestamp() {
         return lasttimestamp;
     }
 
-    public void setLasttimestamp(Date lasttimestamp) {
-        this.lasttimestamp = lasttimestamp;
+    public void setLasttimestamp(String lasttimestamp) {
+        this.lasttimestamp = lasttimestamp == null ? null : lasttimestamp.trim();
     }
 
     public String getCooperationtype() {

@@ -14,16 +14,17 @@
     <result column="PortNumber" jdbcType="SMALLINT" property="portnumber" />
     <result column="serviceip" jdbcType="VARCHAR" property="serviceip" />
     <result column="baowenlujing" jdbcType="VARCHAR" property="baowenlujing" />
+    <result column="docname" jdbcType="VARCHAR" property="docname" />
     <result column="IsEnable" jdbcType="BIT" property="isenable" />
-    <result column="LastTimestamp" jdbcType="TIMESTAMP" property="lasttimestamp" />
+    <result column="LastTimestamp" jdbcType="VARCHAR" property="lasttimestamp" />
     <result column="cooperationtype" jdbcType="VARCHAR" property="cooperationtype" />
     <result column="Status" jdbcType="SMALLINT" property="status" />
     <result column="IsDelete" jdbcType="BIT" property="isdelete" />
   </resultMap>
   <sql id="Base_Column_List">
     id, Name, channelid, manager, projectleader, hexinnemdianID, productqixian, Description, 
-    IPAddress, PortNumber, serviceip, baowenlujing, IsEnable, LastTimestamp, cooperationtype, 
-    Status, IsDelete
+    IPAddress, PortNumber, serviceip, baowenlujing, docname, IsEnable, LastTimestamp, 
+    cooperationtype, Status, IsDelete
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
@@ -40,14 +41,16 @@
       manager, projectleader, hexinnemdianID, 
       productqixian, Description, IPAddress, 
       PortNumber, serviceip, baowenlujing, 
-      IsEnable, LastTimestamp, cooperationtype, 
-      Status, IsDelete)
+      docname, IsEnable, LastTimestamp, 
+      cooperationtype, Status, IsDelete
+      )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{channelid,jdbcType=VARCHAR}, 
       #{manager,jdbcType=VARCHAR}, #{projectleader,jdbcType=VARCHAR}, #{hexinnemdianid,jdbcType=VARCHAR}, 
       #{productqixian,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{ipaddress,jdbcType=VARCHAR}, 
       #{portnumber,jdbcType=SMALLINT}, #{serviceip,jdbcType=VARCHAR}, #{baowenlujing,jdbcType=VARCHAR}, 
-      #{isenable,jdbcType=BIT}, #{lasttimestamp,jdbcType=TIMESTAMP}, #{cooperationtype,jdbcType=VARCHAR}, 
-      #{status,jdbcType=SMALLINT}, #{isdelete,jdbcType=BIT})
+      #{docname,jdbcType=VARCHAR}, #{isenable,jdbcType=BIT}, #{lasttimestamp,jdbcType=VARCHAR}, 
+      #{cooperationtype,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, #{isdelete,jdbcType=BIT}
+      )
   </insert>
   <insert id="insertSelective" parameterType="cn.temptation.domain.Channel">
     insert into channel
@@ -87,6 +90,9 @@
       </if>
       <if test="baowenlujing != null">
         baowenlujing,
+      </if>
+      <if test="docname != null">
+        docname,
       </if>
       <if test="isenable != null">
         IsEnable,
@@ -141,11 +147,14 @@
       <if test="baowenlujing != null">
         #{baowenlujing,jdbcType=VARCHAR},
       </if>
+      <if test="docname != null">
+        #{docname,jdbcType=VARCHAR},
+      </if>
       <if test="isenable != null">
         #{isenable,jdbcType=BIT},
       </if>
       <if test="lasttimestamp != null">
-        #{lasttimestamp,jdbcType=TIMESTAMP},
+        #{lasttimestamp,jdbcType=VARCHAR},
       </if>
       <if test="cooperationtype != null">
         #{cooperationtype,jdbcType=VARCHAR},
@@ -194,11 +203,14 @@
       <if test="baowenlujing != null">
         baowenlujing = #{baowenlujing,jdbcType=VARCHAR},
       </if>
+      <if test="docname != null">
+        docname = #{docname,jdbcType=VARCHAR},
+      </if>
       <if test="isenable != null">
         IsEnable = #{isenable,jdbcType=BIT},
       </if>
       <if test="lasttimestamp != null">
-        LastTimestamp = #{lasttimestamp,jdbcType=TIMESTAMP},
+        LastTimestamp = #{lasttimestamp,jdbcType=VARCHAR},
       </if>
       <if test="cooperationtype != null">
         cooperationtype = #{cooperationtype,jdbcType=VARCHAR},
@@ -225,8 +237,9 @@
       PortNumber = #{portnumber,jdbcType=SMALLINT},
       serviceip = #{serviceip,jdbcType=VARCHAR},
       baowenlujing = #{baowenlujing,jdbcType=VARCHAR},
+      docname = #{docname,jdbcType=VARCHAR},
       IsEnable = #{isenable,jdbcType=BIT},
-      LastTimestamp = #{lasttimestamp,jdbcType=TIMESTAMP},
+      LastTimestamp = #{lasttimestamp,jdbcType=VARCHAR},
       cooperationtype = #{cooperationtype,jdbcType=VARCHAR},
       Status = #{status,jdbcType=SMALLINT},
       IsDelete = #{isdelete,jdbcType=BIT}
@@ -234,6 +247,8 @@
   </update>
   <select id="selectChannel" resultType="cn.temptation.domain.Channel">
        SELECT * FROM channel
-</select>
-  
+  </select>
+  <select id="findAllChannels" resultType="cn.temptation.domain.Channel">
+       SELECT * FROM channel
+  </select>
 </mapper>

@@ -20,4 +20,38 @@ public class ChannelServiceImp implements ChannelService {
  
     }
  
+    public Channel selectByPrimaryKey(Integer id) {
+		return null;
+    	
+    }
+
+	@Override
+	public int deleteByPrimaryKey(Integer id) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int insert(Channel record) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int insertSelective(Channel record) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateByPrimaryKeySelective(Channel record) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public int updateByPrimaryKey(Channel record) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
