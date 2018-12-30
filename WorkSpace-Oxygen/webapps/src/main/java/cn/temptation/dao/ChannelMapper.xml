@@ -52,6 +52,24 @@
       #{cooperationtype,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, #{isdelete,jdbcType=BIT}
       )
   </insert>
+  
+  <insert id="insertChannel" parameterType="cn.temptation.domain.Channel">
+    insert into channel (id, Name, channelid, 
+      manager, projectleader, hexinnemdianID, 
+      productqixian, Description, IPAddress, 
+      PortNumber, serviceip, baowenlujing, 
+      docname, IsEnable, LastTimestamp, 
+      cooperationtype, Status, IsDelete
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{channelid,jdbcType=VARCHAR}, 
+      #{manager,jdbcType=VARCHAR}, #{projectleader,jdbcType=VARCHAR}, #{hexinnemdianid,jdbcType=VARCHAR}, 
+      #{productqixian,jdbcType=INTEGER}, #{description,jdbcType=VARCHAR}, #{ipaddress,jdbcType=VARCHAR}, 
+      #{portnumber,jdbcType=SMALLINT}, #{serviceip,jdbcType=VARCHAR}, #{baowenlujing,jdbcType=VARCHAR}, 
+      #{docname,jdbcType=VARCHAR}, #{isenable,jdbcType=BIT}, #{lasttimestamp,jdbcType=VARCHAR}, 
+      #{cooperationtype,jdbcType=VARCHAR}, #{status,jdbcType=SMALLINT}, #{isdelete,jdbcType=BIT}
+      )
+  </insert>
+  
   <insert id="insertChannel" parameterType="cn.temptation.domain.Channel">
     insert into channel
     <trim prefix="(" suffix=")" suffixOverrides=",">

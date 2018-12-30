@@ -233,7 +233,11 @@
 		</dependency>
     
         
-        
+        <dependency>
+            <groupId>commons-dbutils</groupId>
+            <artifactId>commons-dbutils</artifactId>
+            <version>1.7</version>
+        </dependency>
         
         
         <!-- 定时器 -->
@@ -506,15 +510,14 @@
 			<artifactId>aopalliance</artifactId>
 			<version>1.0</version>
 		</dependency>
+		
+		<!--  
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.8.10</version>
 		</dependency>
-        
-        
-        
-
+        -->
         <!-- MyBatis相关包 -->
         <dependency>
             <groupId>org.mybatis</groupId>
@@ -638,6 +641,12 @@
             <version>3.8.1</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+			  <groupId>org.testng</groupId>
+			  <artifactId>testng</artifactId>
+			  <version>7.0.0-beta1</version>
+		</dependency>
+
     </dependencies>
-    
 </project>

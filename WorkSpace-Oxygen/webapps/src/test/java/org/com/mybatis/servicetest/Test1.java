@@ -10,7 +10,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import org.apache.log4j.Logger;
 import org.com.tools.common.MyDate;
-import org.com.tools.task.MyTask;
 import org.junit.Test;
 
 import cn.temptation.dao.ChannelMapper;

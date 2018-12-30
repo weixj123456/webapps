@@ -6,12 +6,12 @@ import cn.temptation.domain.Channel;
 
 
 public interface ChannelMapper {
-//    int deleteByPrimaryKey(Integer id);
-//    int insert(Channel record);
-//    int insertSelective(Channel record);
-//    Channel selectByPrimaryKey(Integer id);
-//    int updateByPrimaryKeySelective(Channel record);
-//    int updateByPrimaryKey(Channel record);   
+    int deleteByPrimaryKey(Integer id);
+    int insert(Channel record);
+    int insertSelective(Channel record);
+    Channel selectByPrimaryKey(Integer id);
+    int updateByPrimaryKeySelective(Channel record);
+    int updateByPrimaryKey(Channel record);   
     public List<Channel> selectChannel() throws Exception;
     
     public Channel findChannelById(int id) throws Exception ;
