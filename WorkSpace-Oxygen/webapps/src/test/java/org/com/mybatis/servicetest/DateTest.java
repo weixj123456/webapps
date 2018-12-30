@@ -24,5 +24,15 @@ public class DateTest {
 	        long now=System.currentTimeMillis();
 	        System.out.println("aDate:"+aDate.format(now));
 	        System.out.println("bDate:"+bDate.format(now));
+	        
+	        
+			Date d = new Date();
+			SimpleDateFormat ss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");//12小时制  
+			System.out.println(ss.format(d));
+			Date date = new Date();
+			SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//24小时制  
+			String LgTime = sdformat.format(date);
+			System.out.println(LgTime);
+
 	   }
 }

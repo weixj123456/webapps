@@ -100,6 +100,18 @@ public class MyDate {
 		return str;
 	}
 	
+	public static String getTimeString() {
+//		Date d = new Date();
+//		SimpleDateFormat ss = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");//12小时制  
+//		System.out.println(ss.format(d));
+		Date date = new Date();
+		SimpleDateFormat sdformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//24小时制  
+		String LgTime = sdformat.format(date);
+		System.out.println(LgTime);
+		return LgTime;
+		
+	}
+	
 	// 获取当前时间戳2
 	public static String getCurrentTimeMillis() {
 		long l=System.currentTimeMillis();
